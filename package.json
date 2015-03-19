@@ -1,7 +1,7 @@
 {
   "name": "ludwig-api",
   "version": "0.1.0",
-  "description": "Ludwig REST API",
+  "description": "RESTful API for Ludwig, the collaborative testing tool",
   "main": "index.js",
   "scripts": {
     "test": "grunt"
