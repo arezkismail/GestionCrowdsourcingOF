@@ -21,7 +21,7 @@ This means you should use it somehow like this: `app.use('/api', require('ludwig
 
 - `mongoose`: optional, if you want to reuse an existing Mongoose connection. If not, you will need to set the `MONGODB_URL` environment variable and have it point to a running MongoDB instance.
 - `simulate`: an async function that takes two params: the `test` object as stored in the database and a callback. You will have to call the callback with an error as the first parameter, and the execution result as the second.
-- `onCreate`: an async function that takes two params: the `test` object as stored in the database and a callback. You will have to call the callback with an error as the first parameter, and the possibly-transformed `test` object as the second.
+- `onCreate`: an opportunity to do something to a test when it is created. An async function that takes two params: the `test` object that is about to be stored in the database and a callback. You will have to call the callback with an error as the first parameter, and the possibly-transformed `test` object as the second. **Optional**, defaults to doing nothing.
 
 
 ### Fill the database
