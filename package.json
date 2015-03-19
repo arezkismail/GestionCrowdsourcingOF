@@ -1,6 +1,6 @@
 {
   "name": "ludwig-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "RESTful API for Ludwig, the collaborative testing tool",
   "main": "index.js",
   "scripts": {
