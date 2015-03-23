@@ -8,10 +8,8 @@
     "url": "git@github.com:sgmap/ludwig-api.git"
   },
   "keywords": [
-    "ludwig",
-    "tests"
+    "test"
   ],
-  "author": "",
   "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/sgmap/ludwig-api/issues"
