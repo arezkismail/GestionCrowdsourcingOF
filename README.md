@@ -50,3 +50,11 @@ Authentication
 Only logged-in users may filter and modify tests.
 
 If no user is defined in the database when you first start the app, a test user will be added for you. See the `fixtures` folder to get its login information.
+
+
+### Public routes
+
+A path is accessible without being logged-in: `<api mount point>/public/acceptance-tests`.
+
+- `GET`ting this route will return an JSON-encoded array listing all validated tests available in the database. The `keyword` query may be used to list only validated tests with all specified keywords.
+- `POST`ing to this route will create a new acceptance test in `unclaimed` state. However, one will need to be authenticated to edit it.
