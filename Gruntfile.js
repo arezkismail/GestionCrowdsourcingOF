@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 
         jshint: {
             options: { jshintrc: true },
-            all: ['lib/**/*.js', 'migrations/*.js', '*.js']
+            all: ['lib/**/*.js', 'fixtures/*.js', '*.js']
         }
 
     });

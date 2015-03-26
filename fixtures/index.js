@@ -3,33 +3,6 @@ var path = require('path'),
     _    = require('lodash');
 
 
-/** Load all fixtures from the given folder if the matching collection is empty.
-*
-*@param  {Object}    [options]    May contain:
-*     -  {Mongoose}       [mongoose = connect(process.env.MONGODB_URL)]   The Mongoose connection to use to load fixtures to.
-*     -  {String}         [source = dirname]  Path to the directory containing model-named JS or JSON files defining document attributes to insert.
-*     -  {Array<String>}  [models = _all_]  The subset of models to load fixtures for.
-*     -  {Boolean}        [force = false]   Always load the fixtures, even if the collection is not empty.
-*/
-exports.loadFixtures = function (options) {
-    var config = _.clone(options);
-
-    if (! config.mongoose) {
-        config.mongoose = require('mongoose');
-        config.mongoose.connect(process.env.MONGODB_URL);
-        require('../lib/config/mongoose').init(config.mongoose);
-    }
-
-    _.defaults(config, {
-        source: __dirname,
-        models: [],
-        force : false
-    });
-
-    return loadFixtures(config);
-}
-
-
 /**
 *@private
 */
@@ -59,3 +32,30 @@ function loadFixtures(config) {
         });
     });
 }
+
+
+/** Load all fixtures from the given folder if the matching collection is empty.
+*
+*@param  {Object}    [options]    May contain:
+*     -  {Mongoose}       [mongoose = connect(process.env.MONGODB_URL)]   The Mongoose connection to use to load fixtures to.
+*     -  {String}         [source = dirname]  Path to the directory containing model-named JS or JSON files defining document attributes to insert.
+*     -  {Array<String>}  [models = _all_]  The subset of models to load fixtures for.
+*     -  {Boolean}        [force = false]   Always load the fixtures, even if the collection is not empty.
+*/
+exports.loadFixtures = function (options) {
+    var config = _.clone(options);
+
+    if (! config.mongoose) {
+        config.mongoose = require('mongoose');
+        config.mongoose.connect(process.env.MONGODB_URL);
+        require('../lib/config/mongoose').init(config.mongoose);
+    }
+
+    _.defaults(config, {
+        source: __dirname,
+        models: [],
+        force : false
+    });
+
+    return loadFixtures(config);
+};
