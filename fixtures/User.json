@@ -1,7 +1,9 @@
-{
-    "firstName" : "Test",
-    "lastName"  : "Admin",
-    "email"     : "test@test.com",
-    "password"  : "test",
-    "isAdmin"   : true
-}
+[
+    {
+        "firstName" : "Test",
+        "lastName"  : "Admin",
+        "email"     : "test@test.com",
+        "password"  : "test",
+        "isAdmin"   : true
+    }
+]

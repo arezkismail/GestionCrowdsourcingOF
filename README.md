@@ -27,6 +27,7 @@ This means you should use it somehow like this: `app.use('/api', require('ludwig
 ### Fill the database
 
 To manage tests, you will need to fill the `Users` collection.
+The easiest way to do this is to define them in JSON in `fixtures/User.json`, and then run `npm run load-fixtures`.
 
 If you want to add tests directly through shell, the name of the collection storing the tests is `AcceptanceTest`. Its schema is defined in `lib/models`.
 
