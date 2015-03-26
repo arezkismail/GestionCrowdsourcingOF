@@ -24,7 +24,7 @@ module.exports = function (options) {
     require('./lib/config/passport')(passport);
 
     if (process.env.NODE_ENV !== 'production') {
-        require('./fixtures');
+        require('./fixtures').loadFixtures({ mongoose: mongoose });
     }
 
     _.assign(apiOptions, _.pick(options, 'possibleValues', 'simulate', 'onCreate'));
