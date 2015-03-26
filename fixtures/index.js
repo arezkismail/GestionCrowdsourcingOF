@@ -47,8 +47,12 @@ function loadFixtures(config) {
         model.findOne(function (err, document) {
             if (! config.force && document) return;
 
-            model.create(data).then(function (created) {
-                console.log('Loaded', modelName, 'fixture from', filename, ': ', created);
+            model.create(data).then(function () {
+                _.toArray(arguments).forEach(function (createdDoc) {
+                    console.log('Loaded', modelName, 'fixture from', filename, ': ', createdDoc);
+                });
+
+                console.log('====\nLoaded', arguments.length, modelName, 'fixtures from', filename, '\n====');
             }, function (error) {
                 console.error('Could not load', modelName, 'fixture from', filename, ': ', error);
             }).end();
