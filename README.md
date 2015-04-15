@@ -37,7 +37,8 @@ Configuration
 
 ### Possible values
 
- In order to display human-readable results, you have to define the possible values that will be computed by the API.
+In order to display human-readable results, you have to define the possible values that will be computed by the API.
+These values are passed with the `possibleValues` option, as an array of objects with the following properties:
 
 - `id`: the value identifier that will be computed by the `simulate` function.
 - `label`: a complete label that will be displayed to the user.
