@@ -25,9 +25,6 @@ stream.on('data', function(acceptanceTest) {
                 .set('resultUpdated', activity.date)
                 .save(function(err, data) {
                     if (err) return console.trace(err);
-                    console.log(acceptanceTest._id + ' migrated');
-                    console.log(data)
-                    console.log(activity.date)
                 });
         });
 
